@@ -1,1 +1,376 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cue Controller — A dedicated control interface for Ableton Live.">
+  <meta name="theme-color" content="#101416">
+  <title>Cue Controller — Mones Moment</title>
+
+  <style>
+    :root {
+      --background: #101416;
+      --surface: #192124;
+      --text: #f1f4f4;
+      --muted: #a5b2b5;
+      --accent: #418c9e;
+      --highlight: #ffe84a;
+      --border: #263236;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    .hero {
+      min-height: 75vh;
+      padding: 110px 8%;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 1;
+      letter-spacing: -.06em;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .intro {
+      max-width: 610px;
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 38px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+
+    .primary {
+      background: var(--highlight);
+      color: #101416;
+    }
+
+    .secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .version {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 18px;
+    }
+
+    .section {
+      padding: 85px 8%;
+      border-top: 1px solid var(--border);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 42px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px;
+    }
+
+    .feature h3 {
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .download-section {
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .download-section p {
+      color: var(--muted);
+      margin: 12px auto 30px;
+    }
+
+    .platforms {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--muted);
+      font-size: .85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: var(--highlight);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 22px 6%;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: .8rem;
+      }
+
+      .hero {
+        padding: 85px 6%;
+      }
+
+      .section {
+        padding: 65px 6%;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 25px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="/">MONES <span>MOMENT</span></a>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+
+        <p class="eyebrow">Mones Moment · Music Technology</p>
+
+        <h1>Cue<br><span>Controller.</span></h1>
+
+        <p class="intro">
+          A dedicated control interface for Ableton Live.
+          Navigate your set, control locators and manage playback
+          through a simple and focused interface.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href="#download">
+            Download for macOS
+          </a>
+
+          <a class="button secondary" href="#features">
+            Explore features
+          </a>
+        </div>
+
+        <p class="version">
+          Version 1.1.1 · Universal macOS build
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section" id="features">
+
+      <h2>Built for live performance.</h2>
+
+      <p class="section-intro">
+        Focus on your performance, not on navigating complex software.
+        Cue Controller provides a dedicated interface for controlling
+        your Ableton Live session.
+      </p>
+
+      <div class="features">
+
+        <article class="feature">
+          <h3>Locator Control</h3>
+          <p>
+            Navigate between locators in your Ableton Live set
+            with a dedicated control interface.
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Transport Control</h3>
+          <p>
+            Manage playback and transport functions
+            from one focused interface.
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Live Workflow</h3>
+          <p>
+            Designed to support musicians and performers
+            working with Ableton Live.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section download-section" id="download">
+
+      <h2>Get Cue Controller.</h2>
+
+      <p>
+        Start controlling your Ableton Live sessions.
+        Download the latest available macOS version.
+      </p>
+
+      <a
+        class="button primary"
+        href="https://downloads.monesmoment.com/Cue%20Controller-1.1.1-universal.dmg"
+        download
+      >
+        Download for macOS
+      </a>
+
+      <div class="platforms">
+        <span>macOS · Universal</span>
+        <span>Version 1.1.1</span>
+        <span>Windows · Coming soon</span>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Mones Moment</span>
+    <a href="/">Back to Mones Moment</a>
+  </footer>
+
+</body>
+</html>
+
