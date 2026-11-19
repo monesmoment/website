@@ -226,6 +226,31 @@
       color: var(--highlight);
     }
 
+        .screenshots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .screenshot {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .screenshots {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
     @media (max-width: 700px) {
       header {
         padding: 22px 6%;
@@ -340,6 +365,25 @@
       </div>
     </section>
 
+    <section id="screenshots">
+  <h2>Screenshots</h2>
+  <p>Take a closer look at Cue Controller.</p>
+
+  <div class="screenshots">
+    <div class="screenshot">
+      <img src="images/cc-img01.png" alt="Cue Controller interface">
+    </div>
+
+    <div class="screenshot">
+      <img src="images/cc-img02.png" alt="Cue Controller controls">
+    </div>
+
+    <div class="screenshot">
+      <img src="images/cc-img03.png" alt="Cue Controller features">
+    </div>
+  </div>
+</section>
+    
     <section class="section download-section" id="download">
 
       <h2>Get Cue Controller.</h2>
