@@ -72,14 +72,23 @@
     }
 
     main {
+      width: 100%;
       min-height: 75vh;
       display: flex;
-      align-items: center;
-      padding: 100px 8%;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+      overflow: hidden;
     }
 
     .hero {
+      width: 100%;
       max-width: 850px;
+      padding: 100px 8%;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .eyebrow {
@@ -124,43 +133,6 @@
       transform: translateY(-2px);
     }
 
-    footer {
-      padding: 28px 8%;
-      border-top: 1px solid #263236;
-      color: var(--muted);
-      font-size: 0.85rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 22px 6%;
-      }
-
-      nav {
-        gap: 14px;
-      }
-
-      nav a {
-        font-size: 0.8rem;
-      }
-
-      main {
-        padding: 80px 6%;
-      }
-
-      .intro {
-        font-size: 1.05rem;
-      }
-
-      footer {
-        padding: 24px 6%;
-      }
-    }
-
     .products-section {
       padding: 85px 8%;
       border-top: 1px solid #263236;
@@ -200,10 +172,53 @@
       font-size: 1.8rem;
       margin-bottom: 16px;
     }
+
     .product-card p {
       color: var(--muted);
       margin-bottom: 25px;
     }
+
+    footer {
+      padding: 28px 8%;
+      border-top: 1px solid #263236;
+      color: var(--muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 22px 6%;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        width: 100%;
+        padding: 80px 6%;
+      }
+
+      .intro {
+        font-size: 1.05rem;
+      }
+
+      footer {
+        padding: 24px 6%;
+      }
+    }
+
     @media (max-width: 700px) {
       .products-section {
         padding: 65px 6%;
@@ -214,17 +229,18 @@
         padding: 20px;
       }
     }
-
-
-    
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">MONES <span>MOMENT</span></div>
+
     <nav>
-      <a href="#about">About</a>
+      <a href="/en/">Home</a>
+      <a href="/en/about/">About</a>
       <a href="#products">Products</a>
+      <a href="/en/contact/">Contact</a>
       <a class="language" href="/es/">🇦🇷 ES</a>
     </nav>
   </header>
@@ -232,45 +248,47 @@
   <main>
     <section class="hero" id="about">
       <p class="eyebrow">Music · Creativity · Technology</p>
+
       <h1>Technology for<br>creative <span>moments.</span></h1>
+
       <p class="intro">
         Mones Moment develops tools and technology that connect creativity,
         music and digital experiences.
       </p>
-      <a class="button" href="/cue-controller">
+
+      <a class="button" href="/cue-controller/">
         Explore Cue Controller
       </a>
     </section>
-    
-  <section class="products-section" id="products">
-  <h2>Products</h2>
 
-  <p class="products-intro">
-    Creative tools designed to connect music, technology and live performance.
-  </p>
+    <section class="products-section" id="products">
+      <h2>Products</h2>
 
-  <div class="product-card">
-    <img
-      src="/cue-controller/images/cc-img01.png"
-      alt="Cue Controller application interface"
-    >
-
-    <div>
-      <h3>Cue Controller</h3>
-
-      <p>
-        A dedicated control interface for Ableton Live.
-        Navigate your set, control locators and manage playback
-        through a simple and focused interface.
+      <p class="products-intro">
+        Creative tools designed to connect music, technology and live performance.
       </p>
 
-      <a class="button primary" href="/cue-controller/">
-        Explore Cue Controller
-      </a>
-    </div>
-  </div>
-</section>
-  
+      <div class="product-card">
+        <img
+          src="/cue-controller/images/cc-img01.png"
+          alt="Cue Controller application interface"
+        >
+
+        <div>
+          <h3>Cue Controller</h3>
+
+          <p>
+            A dedicated control interface for Ableton Live.
+            Navigate your set, control locators and manage playback
+            through a simple and focused interface.
+          </p>
+
+          <a class="button primary" href="/cue-controller/">
+            Explore Cue Controller
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -279,4 +297,3 @@
   </footer>
 </body>
 </html>
-
