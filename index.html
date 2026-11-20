@@ -160,6 +160,63 @@
         padding: 24px 6%;
       }
     }
+
+    .products-section {
+      padding: 85px 8%;
+      border-top: 1px solid #263236;
+    }
+
+    .products-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .products-intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid #263236;
+      border-radius: 6px;
+      padding: 30px;
+    }
+
+    .product-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .product-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .product-card p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+    @media (max-width: 700px) {
+      .products-section {
+        padding: 65px 6%;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+
+
+    
   </style>
 </head>
 <body>
@@ -184,6 +241,36 @@
         Explore Cue Controller
       </a>
     </section>
+    
+  <section class="products-section" id="products">
+  <h2>Products</h2>
+
+  <p class="products-intro">
+    Creative tools designed to connect music, technology and live performance.
+  </p>
+
+  <div class="product-card">
+    <img
+      src="/cue-controller/images/cc-img01.png"
+      alt="Cue Controller application interface"
+    >
+
+    <div>
+      <h3>Cue Controller</h3>
+
+      <p>
+        A dedicated control interface for Ableton Live.
+        Navigate your set, control locators and manage playback
+        through a simple and focused interface.
+      </p>
+
+      <a class="button primary" href="/cue-controller/">
+        Explore Cue Controller
+      </a>
+    </div>
+  </div>
+</section>
+  
   </main>
 
   <footer>
